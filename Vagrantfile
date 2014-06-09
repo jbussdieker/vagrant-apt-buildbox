@@ -19,12 +19,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.provision "shell" do |shell|
-    shell.path = "buildbot/install_puppet.sh"
+    shell.path = "puppet/install_puppet.sh"
   end
 
   config.vm.provision "puppet" do |puppet|
-    puppet.manifests_path = "buildbot/manifests"
-    puppet.module_path = "buildbot/modules"
+    puppet.manifests_path = "puppet/manifests"
+    puppet.module_path = "puppet/modules"
     puppet.manifest_file  = "site.pp"
     puppet.facter = {
       "role" => "base"
