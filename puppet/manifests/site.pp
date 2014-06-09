@@ -4,4 +4,8 @@ node default {
     ensure => present,
   }
 
+  class { 'buildbot':
+    ensure => present,
+  }
+
 }
